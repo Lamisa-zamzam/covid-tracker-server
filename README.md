@@ -14,3 +14,10 @@ Tools Used:
 4. Express.js,
 5. Node.js,
 6. CORS
+
+## To run locally
+
+1. Clone the repo (git clone URL)
+2. Install the dependencies (npm install)
+3. run on PORT 5000 with npm start
+4. Replace the mongo URI in .env
