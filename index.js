@@ -28,6 +28,6 @@ app.post("/patients", (req, res) => {
 
 app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log("Listening to you, PORT 5000");
 });
