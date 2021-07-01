@@ -54,16 +54,14 @@ const RootQuery = new GraphQLObjectType({
         patients: {
             type: new GraphQLList(PatientType),
             resolve(parent, args) {
-                return Patient.find({}).limit(10);
+                return Patient.find({}).limit(50);
             },
         },
-        statusWiseCases: {
+        patientsByDate: {
             type: new GraphQLList(PatientType),
-            args: { CurrentStatus: { type: GraphQLString } },
+            args: { DateAnnounced: { type: GraphQLString } },
             resolve(parent, args) {
-                return Patient.find({
-                    CurrentStatus: args.CurrentStatus,
-                });
+                return Patient.find({ DateAnnounced: args.DateAnnounced });
             },
         },
     },
